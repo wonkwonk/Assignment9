@@ -1,0 +1,62 @@
+import math 
+def sphere_volume(r):
+    #formula
+   #r**3 is r^3 or r cubed
+    volume = 4/3 * math.pi * r**3
+    #print result
+    print("Volume: ",volume)
+#get input
+rad = float(input("Enter a radius: "))
+#call
+sphere_volume(rad)
+
+
+def print_range(s,e):
+    print(s)
+    #if they are same: no range, return
+    if s == e:
+        return 
+    #if start is greater than end, count down
+    elif s > e: 
+        print_range(s-1,e)
+    #if end is greater than start, count up
+    else:
+        print_range(s + 1,e)
+#call
+print_range(3,10)
+
+
+def gcd(a,b):
+    #gcd(a,b) = gcd(b,r) => gcd(a,0)
+        #so when b = 0, return a
+    if b == 0:
+        return a
+    else:
+        #euclid division 
+        return gcd(b, a%b)
+#call
+print("GCD OF 12 & 8: ",gcd(12,8))
+print("GCD OF 20 & 24: ",gcd(20,24))
+
+#import csv, json
+#def csv_to_json(csvFile, jsonFile):
+
+#    sales_data = []
+#    #read csv file
+#    with open(csvFile, encoding='utf-8') as csvF:
+#        csvReader = csv.DictReader(csvF) 
+
+#        #read line by line
+#        for row in csvReader: 
+#            #append to list
+#            sales_data.append(row)
+
+#    #write to json file 
+#    with open(jsonFile, 'w', encoding='utf-8') as jsonF: 
+#        jsonF.write(json.dumps(sales_data, indent = 4))
+
+##Get csv file, and create json file          
+#csvFile = r'SalesJan2009.csv'
+#jsonFile = r'transaction_data.json'
+##call function
+#csv_to_json(csvFile, jsonFile)
